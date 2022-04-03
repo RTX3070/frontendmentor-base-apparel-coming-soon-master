@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+    /* Primary */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+
+    /* Neutral */
+    --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--soft-red);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 100vh;
+}
+
+.cto {
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%)), linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    width: 375px;
+}
+
+.logo {
+    padding: 30px 0 25px 30px;
+}
+
+.logo img {
+    width: 32%;
+}
+
+.col-1 {
+    order: 2;
+    padding: 50px 35px 100px 35px;
+}
+
+.col-1 h1 {
+    color: var(--dark-grayish-red);
+    font-size: 44px;
+    letter-spacing: 11px;
+    margin-bottom: 8px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.col-1 h1 span {
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+.col-1 p {
+    color: var(--desaturated-red);
+    font-size: 13px;
+    letter-spacing: .5px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.col-1 form {
+    position: relative;
+    width: 100%;
+}
+
+.col-1 form label {
+    display: none;
+}
+
+#email {
+    background-color: transparent;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding: 16px 0 13px 25px;
+    width: 100%;
+}
+
+#email::placeholder {
+    color: var(--desaturated-red);
+}
+
+#email:focus {
+    outline: 1px solid var(--desaturated-red);
+}
+
+#email.error {
+    border: 1px solid var(--soft-red);
+}
+
+.icon-error {
+    display: none;
+    position: absolute;
+    right: 26%;
+    top: 23%;
+}
+
+.icon-error.error {
+    display: block;
+}
+
+.col-1 form .message {
+    display: none;
+    font-size: 13px;
+    font-weight: 600;
+    left: 0;
+    margin-top: 8px;
+    padding-left: 25px;
+    position: absolute;
+}
+
+.col-1 form .message.error {
+    color: var(--soft-red);
+    display: block;
+}
+
+.col-1 form .message.success {
+    color: hsl(113, 82%, 37%);
+    display: block;
+}
+
+.submit-btn {
+    align-items: center;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 15px 25px hsla(0, 6%, 24%, .2);
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 65px;
+}
+
+.submit-btn:hover {
+    background-image: linear-gradient(135deg, hsla(0, 80%, 86%, .4), hsla(0, 74%, 74%, .4));
+}
+
+.col-2 {
+    order: 1;
+}
+
+.desktop {
+    display: none;
+}
+
+.attribution {
+    color: var(--dark-grayish-red);
+    font-size: 12px;
+    text-align: center;
+    position: sticky;
+    top: 100vh;
+}
+
+.attribution a {
+    color: var(--dark-grayish-red);
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+}
+
+.attribution a:active, .attribution a:hover {
+    color: var(--desaturated-red);
+}
+
+@media screen and (min-width: 1440px) {
+    .cto {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 1440px;
+    }
+
+    .logo {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .logo {
+        width: 32%;
+    }
+
+    .col-1 {
+        background: url('./images/bg-pattern-desktop.svg') no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        order: 1;
+        padding: 0px 150px;
+    }
+
+    .col-1 h1 {
+        font-size: 58px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    .col-1 p {
+        font-size: 16px;
+        margin-bottom: 40px;
+        padding-right: 50px;
+        text-align: left;
+    }
+
+    .col-1 form {
+        width: 90%;
+    }
+
+    #email {
+        font-size: 16px;
+        padding: 20px 0 17px 25px;
+    }
+
+    .col-1 form .message {
+        font-size: 16px;
+    }
+
+    .icon-error {
+        top: 30%;
+    }
+
+    .submit-btn {
+        width: 100px;
+    }
+
+    .col-2 {
+        order: 2;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+}
